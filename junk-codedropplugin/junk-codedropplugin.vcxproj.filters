@@ -21,10 +21,10 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Plugin.h">
+    <ClInclude Include="attribute_code.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="attribute_code.h">
+    <ClInclude Include="Plugin.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,6 +36,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="junkcode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="attribute_code.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
