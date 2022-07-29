@@ -1,6 +1,5 @@
-#pragma once
 #include"pch.h"
-#include"attribute_code.h"
+
 
 
 //======================================必须导出的函数=======================================================
@@ -45,7 +44,7 @@ extern "C" __declspec(dllexport) cdecl int  ODBG_Pluginmenu(int origin, TCHAR da
 	}
 	if (origin == PM_DISASM)
 	{
-		strcpy(data, "JunkcodeDrop{0&分析花指令,1&去除花指令}");
+		strcpy(data, "JunkcodeDrop{0&指令去除}");
 	}
 	return 1;
 }
@@ -76,10 +75,6 @@ extern "C" __declspec(dllexport) cdecl void ODBG_Pluginaction(int origin, int ac
 		if (action == 0)
 		{
 			JunkCodeDrop((t_dump*)item);
-		}
-		if (action == 0)
-		{
-			//JunkCodeDrop((t_dump*)item);
 		}
 
 	}

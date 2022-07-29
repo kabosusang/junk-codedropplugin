@@ -19,4 +19,6 @@
 using namespace std;
 #endif //PCH_H
 
+int JunkCodeDrop(t_dump* ptdump);
+
 

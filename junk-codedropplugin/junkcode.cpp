@@ -1,6 +1,4 @@
-#pragma once
 #include"pch.h"
-#include"attribute_code.h"
 uchar Buf[MAXCMDSIZE] = { 0 };
 
 
@@ -8,7 +6,7 @@ uchar Buf[MAXCMDSIZE] = { 0 };
 //Fullname:JunkCodeDrop函数
 //Returns:
 //parameter:传入的程序t_dump*类型指针
-//Author:ka_bo 
+//Author:ka_bo
 //************************************************************//
 
 int JunkCodeDrop(t_dump* ptdump)
@@ -20,10 +18,10 @@ int JunkCodeDrop(t_dump* ptdump)
 	ulong StartmoudleAddress = Selectmodule->base;
 	ulong UltimatemoudleAddress = Selectmodule->resbase + Selectmodule->ressize;
 	ulong BuffSize = UltimatemoudleAddress - StartmoudleAddress;
-	ulong Nextadd = 0;
+
 	//初始化反汇编引擎
 	t_disasm td;
-	t_disasm ad;
+
 	//读取内存
 
 	_Readmemory(Buf, StartmoudleAddress, MAXCMDSIZE, MM_SILENT);
@@ -35,7 +33,6 @@ int JunkCodeDrop(t_dump* ptdump)
 		//_Go(0, 0, STEP_SKIP, 0, 0);
 		for (; StartmoudleAddress < UltimatemoudleAddress; )
 		{
-			_Progress(100, NULL);
 			//计算取出指令的长度
 			int DisasmREDsize = 0;
 			for (size_t i = 0; i < TEXTLEN; i++)
@@ -49,19 +46,12 @@ int JunkCodeDrop(t_dump* ptdump)
 				break;
 			}
 			//对比特征码
-
-			if (codecompare(td.dump, StartmoudleAddress))
-			{
-				Nextadd = StartmoudleAddress + DisasmREDsize;
-				//对上指令去取下一条
-				ulong LSize = _Disasm(Buf, 16, Nextadd, NULL, &ad, DISASM_ALL, NULL);
-				NExtcompare(ad.dump, Nextadd);
-			}
-
+			codecompare(td.dump);
 			//取下一条指令
-			ulong StartmoudleAddress = StartmoudleAddress + DisasmREDsize;
-			//下一条指令进行反汇编
-			ulong LSize = _Disasm(Buf, 16, StartmoudleAddress, NULL, &td, DISASM_ALL, NULL);
+			ulong NextmoudleAddress = StartmoudleAddress + DisasmREDsize;
+
+
+			ulong LSize = _Disasm(Buf, 16, NextmoudleAddress, NULL, &td, DISASM_ALL, NULL);
 		}
 	}
 	return 0;
