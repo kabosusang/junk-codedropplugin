@@ -38,6 +38,9 @@
     <ClCompile Include="junkcode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="attribute_code.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="OLLYDBG.LIB">

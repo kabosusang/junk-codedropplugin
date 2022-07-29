@@ -165,6 +165,7 @@
     <ClInclude Include="Plugin.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="attribute_code.cpp" />
     <ClCompile Include="junkcode-drop.cpp" />
     <ClCompile Include="junkcode.cpp" />
     <ClCompile Include="pch.cpp">
