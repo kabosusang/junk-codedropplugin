@@ -1,5 +1,5 @@
 # junk-codedropplugin  
-## -谢谢滴水 凉游浅笔深画眉 / NCK-老师和滴水全体老师  
+## 谢谢滴水 凉游浅笔深画眉 / NCK-老师和滴水全体老师  
 :blush::blush::blush::blush:
 
 ### Ollydbgdbg1.0花指令去除插件(还未更新完)
